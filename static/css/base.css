@@ -4,16 +4,26 @@ html {
 
 body {
     background-image: url('/media/homepage/swoosh-source-background.jpg');
+    background-position-y: 11%;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
+    background-size: contain;
 }
 
-#header-text {
-    color: #000;
-    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+.logo-image {
+    background-size: contain;
+
 }
 
+
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
 
 .logo-font {
     text-transform: uppercase;
@@ -24,16 +34,15 @@ body {
 }
 
 .shop-now-button {
-    font-weight: bolder;
-    background: white;
-    border-color: black;
-    color: black;
+    background: black;
+    color: white;
     min-width: 260px;
+    border-radius: 10px;
 }
 
 .btn-black {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
 }
 
 .shop-now-button:hover,
@@ -42,7 +51,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #64729a;
     color: white;
 }
 
