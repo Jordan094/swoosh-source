@@ -9,10 +9,23 @@ body {
     background-size: contain;
 }
 
-.logo-image {
-    background-size: contain;
-
+.nav-text{
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    font-style: normal;      
 }
+
+#header-text{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#shop-now-text{
+    font-size: larger;
+    font-family: "Bebas Neue", sans-serif;
+}
+
 
 
 
