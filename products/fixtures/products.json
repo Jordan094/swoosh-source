@@ -31,6 +31,28 @@
         "category": 1,
         "image": "am95black.jpg"
       }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 95 OG Solar Red",
+        "description": "One of the most popular Air Max silhouettes of all time, the Nike Air Max 95 is back in an OG colorway. Last releasing in 2011, the Solar Red colorway is back in original fashion. This pair utilizes a white, solar red, granite, and dust color palette. The unique Air Max 95 model, designed by Sergio Lozano, draws inspiration from the human-anatomy. This pair released for $160 in July 2018.",
+        "price": 150.00,
+        "category": 1,
+        "image": "am95red.jpg"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 95 OG Fresh Mint",
+        "description": "Get fresher than a mint and cop the Air Max 95 OG Fresh Mint. This AM 95 comes with a grey upper plus white and mint accents, mint Nike 'Swoosh', black midsole, and a black sole. These sneakers released in May 2019 and retailed for $160. Grab these fresh kicks on StockX now.",
+        "price": 150.00,
+        "category": 1,
+        "image": "am95mint.jpg"
+      }
     }
   ]
   

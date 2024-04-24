@@ -5,5 +5,54 @@
       "fields": {
         "name": "Air Max 95"
       }
+    },
+    {
+      "model": "products.category",
+      "pk": 2,
+      "fields": {
+        "name": "Air Max 90"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 3,
+      "fields": {
+        "name": "Air Max 1"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 4,
+      "fields": {
+        "name": "Air Max Plus"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 5,
+      "fields": {
+        "name": "Air Jordan"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 6,
+      "fields": {
+        "name": "Air Force"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 7,
+      "fields": {
+        "name": "Air Huarache"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 7,
+      "fields": {
+        "name": "Nike Dunks"
+      }
     }
   ]
