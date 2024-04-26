@@ -2,13 +2,6 @@ html {
     height: 100%;
 }
 
-body {
-
-}
-
-.nav-bar {
-    padding-bottom: 10%;
-}
 
 .index-header-container {
     background-image: url('/media/homepage/swoosh-source-background.jpg');
@@ -16,7 +9,7 @@ body {
     background-size: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 80vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -84,8 +77,9 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #64729a;
-    color: white;
+    border: #000;
+    background: #a7a7a7;
+    color: rgb(255, 255, 255);
 }
 
 .text-black {
@@ -118,6 +112,7 @@ body {
     .header-container {
         padding-top: 164px;
     }
+
 
   .navbar-nav {
     flex-direction: column;
@@ -186,17 +181,4 @@ body {
   .dropdown-menu .dropdown-item:hover {
     background-color: #f8f9fa;
   }
-}
-
-
-@media (max-width: 830px) {
-    #details-box {
-        padding-top: 10%;
-    }
-}
-
-@media (max-width: 530px) {
-    #details-box {
-        padding-top: 50%;
-    }
 }
