@@ -3,56 +3,64 @@
       "model": "products.category",
       "pk": 1,
       "fields": {
-        "name": "Air Max 95"
+        "friendly_name": "Air Max 95",
+        "name": "am95"
       }
     },
     {
       "model": "products.category",
       "pk": 2,
       "fields": {
-        "name": "Air Max 90"
+        "friendly_name": "Air Max 90",
+        "name": "am90"
       }
     },
     {
       "model": "products.category",
       "pk": 3,
       "fields": {
-        "name": "Air Max 1"
+        "friendly_name": "Air Max 1",
+        "name": "am1"
       }
     },
     {
       "model": "products.category",
       "pk": 4,
       "fields": {
-        "name": "Air Max Plus"
+        "friendly_name": "Air Max Plus",
+        "name": "tns"
       }
     },
     {
       "model": "products.category",
       "pk": 5,
       "fields": {
-        "name": "Air Jordan"
+        "friendly_name": "Air Jordan",
+        "name": "jordan"
       }
     },
     {
       "model": "products.category",
       "pk": 6,
       "fields": {
-        "name": "Air Force"
+        "friendly_name": "Air Force",
+        "name": "af1"
       }
     },
     {
       "model": "products.category",
       "pk": 7,
       "fields": {
-        "name": "Air Huarache"
+        "friendly_name": "Air Huarache",
+        "name": "huarache"
       }
     },
     {
       "model": "products.category",
       "pk": 8,
       "fields": {
-        "name": "Nike Dunks"
+        "friendly_name": "Nike Dunks",
+        "name": "dunks"
       }
     }
   ]
