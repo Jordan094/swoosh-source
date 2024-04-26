@@ -50,7 +50,7 @@
     },
     {
       "model": "products.category",
-      "pk": 7,
+      "pk": 8,
       "fields": {
         "name": "Nike Dunks"
       }

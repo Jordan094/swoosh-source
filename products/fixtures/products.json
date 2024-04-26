@@ -54,5 +54,248 @@
         "image": "am95mint.jpg"
       }
     }
+    ,
+    {
+      "pk": 6,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 90 Infrared",
+        "description": "The Nike Air Max 90 Infrared arrives in a mix of white mesh, black leather, and grey suede with Infrared inserts on the midfoot, heel tab, and mudguard. A white Air bubble, classic Nike Air branding on the heel tab, and a black and Infrared sole complete the retro design.",
+        "price": 110.00,
+        "category": 2,
+        "image": "am90infrared.jpg"
+      }
+    },
+    {
+      "pk": 7,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 90 Laser Blue",
+        "description": "Fans of the classic Nike Air Max 90 model will love everything about this colorway’s return. The upper is constructed of white leather with grey suede Swoosh and a black mudguard. Hits of Laser Blue appear throughout to give the sneaker it’s signature look.",
+        "price": 150.00,
+        "category": 2,
+        "image": "am90blue.jpg"
+      }
+    },
+    {
+      "pk": 8,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 90 OG Volt",
+        "description": "This OG Air Max 90 by Nike has an upper dressed in white mesh with gray suede overlays and a black leather mudguard. The shoe sits atop a foam midsole with visible Air sole cushioning. Energetic pops of Volt deliver contrasting color at the eyestay, heel and also at the midsole wedge.",
+        "price": 140.00,
+        "category": 2,
+        "image": "am90volt.jpg"
+      }
+    },
+    {
+      "pk": 9,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 90 Grape",
+        "description": "This sneaker features an upper made of a White mesh base with Grey suede overlays, Black leather mudguard, and Hyper Grape accents on the tongue branding, some parts of the outsole, the heel tab with Nike branding, the side panels with ‘Air Max’ branding, a section of the midsole with a visible Air unit, and the front TPU eyestays. A White midsole and a Black waffle rubber outsole round out the design.",
+        "price": 150.00,
+        "category": 2,
+        "image": "am90grape.jpg"
+      }
+    },
+    {
+      "pk": 10,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 90 Triple Black",
+        "description": "The Leather Triple Nike Air Max 90 Black 2020 has a midsole that is equipped with Nike's patented Air Max technology, providing maximum comfort and cushioning with each step. The air unit is visible through the outsole of the shoe. The outsole of the sneaker features a waffle pattern that provides excellent traction and grip on various surfaces.",
+        "price": 170.00,
+        "category": 2,
+        "image": "am90black.jpg"
+      }
+    },
+    {
+      "pk": 11,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 1 Anniversary Royal",
+        "description": "This Nike Air Max 1 is dressed in its OG color scheme of White, Sport Royal, and Neutral Grey. The Sport Royal accent is visible on the Swoosh, upper eyelets, suede mudguard, and Nike branding on the tongue and heels. Other details include white mesh paneling, grey suede, white midsole, and black detailing on the outsole. The Air unit is placed within the heel to finish off the design.",
+        "price": 210.00,
+        "category": 3,
+        "image": "am1blue.jpg"
+      }
+    },
+    {
+      "pk": 12,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 1 Anniversary Red",
+        "description": "The 2017 Restock Air Max 1 design features a nubuck and mesh contrasting upper with Neutral Grey, University Red and crisp white panels. The simple color palette continues via the red Nike branding and the white Air Max sole unit, which is capped off with a red, black and white outsole. Finally, two sets of white laces in matte and satin finish round out the pair.",
+        "price": 250.00,
+        "category": 3,
+        "image": "am1red.jpg"
+      }
+    },
+    {
+      "pk": 13,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 1 Anniversary Orange",
+        "description": "The Nike Air Max 1 Anniversary Orange features similar color blocking styles to its OG Red and Royal Blue colorways. The upper is constructed out of orange and grey synthetic suede. Hits of black peek through on the outsole while a white midsole brings together the classic design.",
+        "price": 160.00,
+        "category": 3,
+        "image": "am1orange.jpg"
+      }
+    },
+    {
+      "pk": 14,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max 1 Anniversary Green",
+        "description": "The Nike Air Max 1 Anniversary Green (2020) features a white, Evergreen Aura, and gray leather and mesh upper, with white acting as a background that feeds into Evergreen Aura mudguards and gray overlays. From there, an 'Air Max' midsole with exposed pods sits atop a two-toned outsole and slight black accents for bordering to complete the design.",
+        "price": 205.00,
+        "category": 3,
+        "image": "am1green.jpg"
+      }
+    },
+    {
+      "pk": 15,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max TN Plus Hyper Blue",
+        "description": "The first thing that draws your eye on the retro is the yellow mini-Swoosh, popping from its usual sidewall position. Moving onto the back, the hexagonal “Tn AIR” logo is stamped onto the heel, beckoning out as bright as it did during its ‘98 release. The canvas upper details the iconic gradient, moving from a dark blue to white, with the black welded lines representing the shadowed palm trees that designer Sean McDowell was inspired by. As per usual, the Whale Bone feature sits in the centre of the sole unit between the front and rear Air bags, providing torsional support and stability.",
+        "price": 225.00,
+        "category": 4,
+        "image": "tnblue.jpg"
+      }
+    },
+    {
+      "pk": 16,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max TN Plus Tiger",
+        "description": "The Nike Air Max Plus Tiger is a stylish and comfortable sneaker that features a bold tiger stripe pattern on the upper. The shoe is made with a combination of synthetic and textile materials, providing durability and breathability. The iconic Air Max cushioning technology in the sole ensures a comfortable ride, while the rubber outsole provides traction and durability. The colorway of the shoe is predominantly black and orange, with white accents on the midsole and Nike branding",
+        "price": 295.00,
+        "category": 4,
+        "image": "tntiger.jpg"
+      }
+    },
+    {
+      "pk": 17,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Max TN Plus 25th Anniversary",
+        "description": "Celebrating 25 years of bold design, the Nike Air Max Plus '25th Anniversary' edition pays homage to this trailblazing ‘90s sneaker. Tying together an assortment of fan-favourite colourways, this pair is truly a celebration of the globally renowned silhouette. ",
+        "price": 350.00,
+        "category": 4,
+        "image": "tnanni.jpg"
+      }
+    },
+    {
+      "pk": 18,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Jordan 1 Chicago (2015)",
+        "description": "The Jordan 1 Retro Chicago (2015) features white, red, and black premium leather uppers with white panels used as a base, Varsity Red overlays wrapping around it, and deep black hues rounding out the Nike 'Swooshes' and other accents. From there, a minimal 'Nike Air logo and a red outsole to match the traditional colors of the famous Chicago Bulls complete the design.",
+        "price": 190.00,
+        "category": 5,
+        "image": "jordan1red.jpg"
+      }
+    },
+    {
+      "pk": 19,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Jordan 1 Taxi",
+        "description": "This Retro OG Air Jordan 1 comes in an all leather build that combines a white base with a yellow toe box, and some yellow overlays in the heel and ankle area. A contrasting black appears in the toe and lace area, Swoosh, and Wings logo on the lateral side. A classic AJ1 white midsole and a yellow rubber outsole round off the design.",
+        "price": 190.00,
+        "category": 5,
+        "image": "jordan1taxi.jpg"
+      }
+    },
+    {
+      "pk": 20,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Jordan 1 Blue Moon",
+        "description": "The Blue Moon Air Jordan 1s are part of Nikes Best Hand in the Game pack and are a royal flush for any fit. These shoes come in a summit white, blue moon and black colorway, offering another twist on the Air Jordan 1 Retro High OG 'Black Toe.' These Js feature a white and black-based upper with blue suede accents and a straight flush on the right insole. These dropped in May of 2018, where they were only available at select Jordan Brand retailers in North America. These are must-have for fans of the AJ 1 and of Jordans many historical achievements.",
+        "price": 170.00,
+        "category": 5,
+        "image": "jordan1blue.jpg"
+      }
+    },
+    {
+      "pk": 21,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Jordan 1 Pine Green",
+        "description": "The Blue Moon Air Jordan 1s are part of Nikes Best Hand in the Game pack and are a royal flush for any fit. These shoes come in a summit white, blue moon and black colorway, offering another twist on the Air Jordan 1 Retro High OG 'Black Toe.' These Js feature a white and black-based upper with blue suede accents and a straight flush on the right insole. These dropped in May of 2018, where they were only available at select Jordan Brand retailers in North America. These are must-have for fans of the AJ 1 and of Jordans many historical achievements.",
+        "price": 230.00,
+        "category": 5,
+        "image": "jordan1green.jpg"
+      }
+    },
+    {
+      "pk": 22,
+      "model": "products.product",
+      "fields": {
+        "name": "Nike Air Force 1 White Low '07",
+        "description": "The Nike Air Force 1 Low White ‘07 features an all-white leather upper with a perforated toe box and Swoosh overlays. A Nike heel embroidery and white sole completes the design.",
+        "price": 120.00,
+        "category": 6,
+        "image": "af1white.jpg"
+      }
+    },
+    {
+      "pk": 23,
+      "model": "products.product",
+      "fields": {
+        "name": "Nike Air Force 1 Black Low '07",
+        "description": "The Nike Air Force 1 Low '07 Black features a triple black smooth leather upper with a matching Air sole and laces. Subtle Nike Air embroidery on the heel tab nods to the history of the AF-1 line. A metallic lace tag and woven tongue label complete the design.",
+        "price": 120.00,
+        "category": 6,
+        "image": "af1black.jpg"
+      }
+    },
+    {
+      "pk": 24,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Huarache Triple Black",
+        "description": "The Nike Air Huarache Triple Black 2021 is entirely made up of synthetic leather and a nylon combo that is paired to the neoprene bootie. The sneaker also features a flexible molded heel structure. This sneaker’s entire upper part is made up of an encapsulated Air unit. The entire sneaker is black colored.",
+        "price": 100.00,
+        "category": 7,
+        "image": "huaracheblack.jpg"
+      }
+    },
+    {
+      "pk": 25,
+      "model": "products.product",
+      "fields": {
+        "name": "Air Huarache White Pure Platinum",
+        "description": "The Nike Air Huarache White Pure Platinum 2021 is a sleek and stylish sneaker that combines comfort and performance. The upper is made of a breathable mesh material that provides ventilation and support, while the neoprene inner sleeve offers a snug and comfortable fit. The white and pure platinum colorway gives the shoe a clean and modern look that is perfect for any occasion. ",
+        "price": 100.00,
+        "category": 7,
+        "image": "huarachewhite.jpg"
+      }
+    },
+    {
+      "pk": 26,
+      "model": "products.product",
+      "fields": {
+        "name": "Nike Dunk Low Retro Panda",
+        "description": "The Nike Air Huarache White Pure Platinum 2021 is a sleek and stylish sneaker that combines comfort and performance. The upper is made of a breathable mesh material that provides ventilation and support, while the neoprene inner sleeve offers a snug and comfortable fit. The white and pure platinum colorway gives the shoe a clean and modern look that is perfect for any occasion. ",
+        "price": 180.00,
+        "category": 7,
+        "image": "dunkblack.jpg"
+      }
+    },
+    {
+      "pk": 27,
+      "model": "products.product",
+      "fields": {
+        "name": "Nike Dunk Low Nike Dunk Low Clear Jade",
+        "description": "The Clear Jade Nike Dunk Low-Top features a white leather upper with a perforated toebox for breathability. Clear Jade leather is used for the side panel Nike Swoosh and the overlays surrounding the toebox, eyestays, heel, and collar. The tongue is white with Clear Jade trim, and a white branding patch with Clear Jade Nike branding. The padded sock liner is Clear Jade, and the insole is Clear Jade with white Nike branding. The foam cushion midsole is fully sewn-in and sits atop a rubber cup sole. The outsole is Clear Jade rubber with a traction pattern in concentric circles.​",
+        "price": 230.00,
+        "category": 7,
+        "image": "dunkjade.jpg"
+      }
+    }
   ]
   
