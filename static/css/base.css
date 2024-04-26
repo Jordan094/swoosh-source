@@ -6,6 +6,10 @@ body {
 
 }
 
+.nav-bar {
+    padding-bottom: 10%;
+}
+
 .index-header-container {
     background-image: url('/media/homepage/swoosh-source-background.jpg');
     background-repeat: no-repeat;
@@ -182,4 +186,17 @@ body {
   .dropdown-menu .dropdown-item:hover {
     background-color: #f8f9fa;
   }
+}
+
+
+@media (max-width: 830px) {
+    #details-box {
+        padding-top: 10%;
+    }
+}
+
+@media (max-width: 530px) {
+    #details-box {
+        padding-top: 50%;
+    }
 }
