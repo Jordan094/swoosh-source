@@ -34,10 +34,6 @@ body {
     font-family: "Bebas Neue", sans-serif;
 }
 
-
-
-
-/* from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -49,6 +45,10 @@ body {
 .logo-font {
     font-family: sans-serif;
     text-transform: uppercase;
+}
+
+.product-font {
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .main-logo-link {
