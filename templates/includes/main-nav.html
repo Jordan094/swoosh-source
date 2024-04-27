@@ -16,10 +16,10 @@
                 Nike Air Max
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="air-max">
-                <a href="" class="dropdown-item">Air Max 1</a>
-                <a href="" class="dropdown-item">Air Max 90</a>
-                <a href="" class="dropdown-item">Air Max 95</a>
-                <a href="" class="dropdown-item">Air Max Plus</a>
+                <a href="{% url 'products' %}?category=am1" class="dropdown-item">Air Max 1</a>
+                <a href="{% url 'products' %}?category=am90" class="dropdown-item">Air Max 90</a>
+                <a href="{% url 'products' %}?category=am95" class="dropdown-item">Air Max 95</a>
+                <a href="{% url 'products' %}?category=tns" class="dropdown-item">Air Max Plus</a>
             </div>
         </li>
 
@@ -28,10 +28,10 @@
                 Nike Air
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Air Jordan</a>
-                <a href="" class="dropdown-item">Air Force</a>
-                <a href="" class="dropdown-item">Air Huarache</a>
-                <a href="" class="dropdown-item">Nike Dunks</a>
+                <a href="{% url 'products' %}?category=jordan" class="dropdown-item">Air Jordan</a>
+                <a href="{% url 'products' %}?category=af1" class="dropdown-item">Air Force</a>
+                <a href="{% url 'products' %}?category=huarache" class="dropdown-item">Air Huarache</a>
+                <a href="{% url 'products' %}?category=dunks" class="dropdown-item">Nike Dunks</a>
             </div>
         </li>
     </ul>
