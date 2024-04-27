@@ -9,7 +9,21 @@
     <div class="container">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="product-font">The whole collection</h2>
+                <h2 class="product-font">
+                    {% if request.GET.sort == "price" %}
+                        All By Price
+                    {% elif request.GET.sort == "category" %}
+                        {% if request.GET.category %}
+                         The {{ request.GET.category|title }} Collection
+                        {% else %}
+                             All By Category
+                        {% endif %}
+                    {% else %}
+                        {% if products|length > 0 and products.0.category.friendly_name %}
+                            The {{ products.0.category.friendly_name }} Collection
+                        {% endif %}
+                    {% endif %}
+                </h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
