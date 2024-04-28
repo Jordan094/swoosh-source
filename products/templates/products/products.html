@@ -11,20 +11,20 @@
             <div class="col text-center mt-3">
                 <h2 class="product-font">
                     {% if request.GET.sort == "price" %}
-                        THE WHOLE COLLECTION
+                    Sorted by Price
                 {% elif request.GET.sort == "category" %}
                     {% if request.GET.category %}
-                        The {{ request.GET.category|title }} Collection
+                        Sorted by {{ request.GET.category }} Category
                     {% else %}
-                    THE WHOLE COLLECTION
+                        Sorted by Category
                     {% endif %}
                 {% elif request.GET.sort == "name" %}
-                THE WHOLE COLLECTION
+                    Sorted by Name
                 {% else %}
                     {% if products|length > 0 and products.0.category.friendly_name %}
                         The {{ products.0.category.friendly_name }} Collection
                     {% endif %}
-                {% endif %}   
+                {% endif %}
                 </h2>
                 <hr class="w-50 mb-1">
             </div>
