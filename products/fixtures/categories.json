@@ -1,42 +1,47 @@
 [
-    {
-      "model": "products.category",
-      "pk": 1,
-      "fields": {
-        "friendly_name": "Air Max 95",
-        "name": "am95"
-      }
-    },
-    {
-      "model": "products.category",
-      "pk": 2,
-      "fields": {
-        "friendly_name": "Air Max 90",
-        "name": "am90"
-      }
-    },
-    {
-      "model": "products.category",
-      "pk": 3,
-      "fields": {
-        "friendly_name": "Air Max 1",
-        "name": "am1"
-      }
-    },
-    {
-      "model": "products.category",
-      "pk": 4,
-      "fields": {
-        "friendly_name": "Air Max Plus",
-        "name": "tns"
-      }
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "friendly_name": "Air Max 95",
+      "name": "am95",
+      "type": "air-max"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "friendly_name": "Air Max 90",
+      "name": "am90",
+      "type": "air-max"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "friendly_name": "Air Max 1",
+      "name": "am1",
+      "type": "air-max"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "friendly_name": "Air Max Plus",
+      "name": "tns",
+      "type": "air-max"
+    }
     },
     {
       "model": "products.category",
       "pk": 5,
       "fields": {
         "friendly_name": "Air Jordan",
-        "name": "jordan"
+        "name": "jordan",
+        "type": "nike-air"
       }
     },
     {
@@ -44,7 +49,8 @@
       "pk": 6,
       "fields": {
         "friendly_name": "Air Force",
-        "name": "af1"
+        "name": "af1",
+        "type": "nike-air"
       }
     },
     {
@@ -52,7 +58,8 @@
       "pk": 7,
       "fields": {
         "friendly_name": "Air Huarache",
-        "name": "huarache"
+        "name": "huarache",
+        "type": "nike-air"
       }
     },
     {
@@ -60,7 +67,8 @@
       "pk": 8,
       "fields": {
         "friendly_name": "Nike Dunks",
-        "name": "dunks"
+        "name": "dunks",
+        "type": "nike-air"
       }
     }
   ]

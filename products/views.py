@@ -1,16 +1,13 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
 
-# Create your views here.
-
 def all_products(request):
-    """A view that will show the user all of the products on the site """
-
     products = Product.objects.all()
     query = None
     categories = None
+    types = None
     sort = None
     direction = None
 
@@ -19,27 +16,30 @@ def all_products(request):
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-
+                sortkey = 'name'  
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
-                    sortkey = f'{sortkey}'
+                    sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        if 'type' in request.GET:
+            types = request.GET.getlist('type')  # Get a list of all selected types
+            # Filter products based on selected types
+            products = products.filter(category__type__in=types).distinct()
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                message.error(request, "Uh oh! It seems like you forgot to type something in the search bar.")
-                return redirect(reverse('products'))
+                messages.error(request, "Uh oh! It seems like you forgot to type something in the search bar.")
+                return redirect('products')
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
@@ -50,10 +50,13 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'current_types': types,
         'current_sorting': current_sorting,
     }
     
     return render(request, 'products/products.html', context)
+
+
 
 
 def product_detail(request, product_id):
