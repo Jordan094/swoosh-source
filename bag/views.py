@@ -8,16 +8,23 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """This adds a quantity of the specified item to the bag """
+    """This adds a quantity of the specified item to the bag"""
 
-    quantity = (request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity'))
+    size = request.POST.get('size')  # Get selected size
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += quantity
+    if item_id in bag:
+        if isinstance(bag[item_id], dict) and 'items_by_size' in bag[item_id]:
+            if size in bag[item_id]['items_by_size']:
+                bag[item_id]['items_by_size'][size] += quantity
+            else:
+                bag[item_id]['items_by_size'][size] = quantity
+        else:
+            bag[item_id] = {'items_by_size': {size: quantity}}
     else:
-        bag[item_id] = quantity
+        bag[item_id] = {'items_by_size': {size: quantity}}
 
     request.session['bag'] = bag
     print(request.session['bag'])
