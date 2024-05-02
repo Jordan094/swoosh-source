@@ -19,7 +19,17 @@
         <div class="col">
             {% if bag_items %}
                 <div class="table-responsive rounded">
-                    {{ bag_items }}
+                    <div class="bag-items">
+                        {% for item in bag_items %}
+                            <div class="item">
+                                <p>Product: {{ item.product.name }}</p>
+                                <p>Quantity: {{ item.quantity }}</p>
+                                <p>Price: ${{ item.price }}</p>
+                            </div>
+                        {% endfor %}
+                        <p>Without Delivery Total: £{{ total }}</p>
+                        <p>With Delivery Total: £{{ grand_total }}</p>
+                    </div>
                 </div>
             {% else %}
                 <p class="lead mb-5">Your bag is empty.</p>
