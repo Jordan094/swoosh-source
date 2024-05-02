@@ -13,21 +13,21 @@ def bag_contents(request):
     print(request.session['bag'])
     
 
-    for item_id, quantity in bag.items():        
+    for item_id, item_data in bag.items():  # Iterate through items in the bag
         product = get_object_or_404(Product, pk=item_id)
         price = Decimal(str(product.price))
-        print("Quantity type:", type(quantity))
-        print("Price type:", type(price))
-        bag_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-            'price': price,
-        })
+        if isinstance(item_data, dict):
+            for size, quantity in item_data.items():  # Iterate through sizes and quantities
+                total += Decimal(quantity) * price
+                bag_items.append({
+                    'item_id': item_id,
+                    'size': size,
+                    'quantity': quantity,
+                    'product': product,
+                    'price': price,
+                })
     
-    total += quantity * product.price
         
-    
 
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     
@@ -35,6 +35,7 @@ def bag_contents(request):
     
     context = {
         'bag_items': bag_items,
+        'delivery': delivery,
         'total': total,
         'product_count': product_count,
         'grand_total': grand_total,
