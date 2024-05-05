@@ -51,18 +51,34 @@ def adjust_bag(request, item_id):
     if request.method == 'POST':
         size = request.POST.get('size')
         quantity = int(request.POST.get('quantity'))
+        print("Size:", size)
+        print("Quantity:", quantity)
         bag = request.session.get('bag', {})
+        
 
         # Check if the item exists in the bag
         if item_id in bag:
-            # Update the quantity of the existing item
-            bag[item_id]['quantity'] = quantity
-            # Remove the item if the quantity is zero or negative
-            if bag[item_id]['quantity'] <= 0:
-                del bag[item_id]
+            # If the item has size variations
+            if isinstance(bag[item_id], dict):
+                # Update the quantity of the specified size
+                if size in bag[item_id]:
+                    # Update the quantity directly instead of adding to the existing quantity
+                    bag[item_id][size] = quantity
+                    # Remove the size if the new quantity is zero or negative
+                    if bag[item_id][size] <= 0:
+                        del bag[item_id][size]
+                        # If all sizes are removed, delete the item from the bag
+                        if not bag[item_id]:
+                            del bag[item_id]
+                else:
+                    # If the specified size doesn't exist, add it to the bag
+                    bag[item_id][size] = quantity
+            else:
+                # If the item doesn't have size variations yet, create a size dictionary and add the quantity
+                bag[item_id] = {size: quantity}
         else:
-            # If the item doesn't exist in the bag, add it with the new quantity
-            bag[item_id] = {'quantity': quantity}
+            # If the item doesn't exist in the bag, add it with the new size and quantity
+            bag[item_id] = {size: quantity}
 
         request.session['bag'] = bag
         return redirect(reverse('view_bag'))  # Redirect to the bag view
