@@ -19,3 +19,6 @@ var style = {
 };
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+console.log("Stripe Public Key:", stripe_public_key);
+console.log("Client Secret:", client_secret);
