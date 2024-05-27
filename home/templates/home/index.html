@@ -5,12 +5,39 @@
 {% endblock %}
 
 {% block content %}
+<hr class="thick-black">
     <div class="index-header-container">
         <h1 class="display-4 logo-font text-center font-weight-bold" id="header-text">
             Your #1 Source for Swoosh
         </h1>
-            <h4 class="text-center">
-                <a href="{%url 'products' %}?sort=category&direction=asc" class="shop-now-button btn btn-lg text-uppercase py-3" id="shop-now-text">Shop Now</a>
-            </h4>
+        <h4 class="text-center">
+            <a href="{% url 'products' %}?sort=category&direction=asc" class="shop-now-button btn btn-md text-uppercase py-3" id="shop-now-text">Shop Now</a>
+        </h4>
     </div>
+    <br>
+
+<!-- Section for displaying random product cards -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center" id="sub-header-text">Why not try something new? - Here are some Random Hot Picks</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for product in random_products %}
+        <div class="col-lg-4 col-md-12 col-sm-12"> 
+            <div class="card text-center">
+                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">Price: £{{ product.price }}</p>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-md view-button">View Product</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<br>
 {% endblock %}
