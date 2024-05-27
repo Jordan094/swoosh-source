@@ -1,76 +1,107 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
-
+/* Main Container */
 .index-header-container {
-    background-image: url('/media/homepage/swoosh-source-background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+  background-image: url('/media/homepage/swoosh-source-background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.nav-text{
-    color: #000;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 50px;
-    font-weight: 400;
-    font-style: normal;      
+/* Typography */
+.nav-text,
+#header-text,
+#shop-now-text,
+.product-font,
+.nav-font {
+  font-family: "Bebas Neue", sans-serif;
 }
 
-#header-text{
-    padding-top: 5%;
-    font-family: "Bebas Neue", sans-serif;
+.nav-text {
+  color: #000;
+  font-size: 50px;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#shop-now-text{
-    font-size: larger;
-    font-family: "Bebas Neue", sans-serif;
+#header-text {
+  padding-top: 5%;
 }
 
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.logo-font {
-    font-family: sans-serif;
-    text-transform: uppercase;
+#shop-now-text {
+  font-size: larger;
 }
 
 .product-font {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .nav-font {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 100;
-    font-size: x-large;
+  font-weight: 100;
+  font-size: x-large;
+}
+
+.text-black {
+  color: #000 !important;
+}
+
+/* Logo */
+.logo-font {
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 .main-logo-link {
-    width: fit-content;
+  width: fit-content;
+}
+
+/* Buttons */
+.shop-now-button,
+.btn-black {
+  background: black;
+  color: white;
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-    border-radius: 10px;
+  min-width: 260px;
+  border-radius: 10px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+  /* Specific styles for .btn-black */
 }
 
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+  border: #000;
+  background: #a7a7a7;
+  color: rgb(255, 255, 255);
+}
+
+/* Icons */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* Border */
+.border-black {
+  border: 1px solid black !important;
+}
+
+/* Back to Top Button */
 .btt-button {
   height: 42px;
   width: 42px;
@@ -79,34 +110,14 @@ html {
   right: 10px;
 }
 
+/* Cursor Pointers */
 .btt-link,
 .update-link,
 .remove-item {
   cursor: pointer;
 }
 
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    border: #000;
-    background: #a7a7a7;
-    color: rgb(255, 255, 255);
-}
-
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-/* ------------------------------- bootstrap toasts */
-
+/* Custom Toast */
 .custom-toast-container {
   position: fixed;
   top: 90px;
@@ -122,8 +133,7 @@ html {
   height: 4px;
 }
 
-/* Allauth form formatting */
-
+/* Allauth Form */
 .allauth-form-inner-content p {
   margin-top: 1.5rem; /* mt-4 */
   color: #6c757d; /* text-secondary */
@@ -144,15 +154,11 @@ html {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-/* btn */
-display: inline-block;
+  display: inline-block;
   font-weight: 400;
   color: #fff;
   text-align: center;
   vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   background-color: #000;
   border: 1px solid #000;
@@ -160,24 +166,21 @@ display: inline-block;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0;
-
-  /* standard bootstrap btn transitions */
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+  color: #fff;
   background-color: #222;
   border-color: #222;
 }
 
 .allauth-form-inner-content a {
-color: #17a2b8; /* text-info */
+  color: #17a2b8; /* text-info */
 }
 
 /* Product Form */
-
 .btn-file {
   position: relative;
   overflow: hidden;
@@ -193,48 +196,39 @@ color: #17a2b8; /* text-info */
   cursor: pointer;
 }
 
+/* Custom Checkbox */
 .custom-checkbox .custom-control-label::before {
   border-radius: 0;
   border-color: #dc3545;
 }
 
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: #dc3545;
   border-color: #dc3545;
   border-radius: 0;
 }
 
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
+/* Media Queries */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
 }
 
-#products-link{
-  font-size: x-large;
-}
-
-/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-
+  .fixed-top-desktop-only {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
 
   .navbar-nav {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .navbar-nav .nav-item {
     margin-bottom: 10px;
   }
@@ -263,38 +257,42 @@ color: #17a2b8; /* text-info */
 
   .dropdown-menu .dropdown-item:hover {
     background-color: #f8f9fa;
-  }  .navbar-nav {
-    flex-direction: column;
-    align-items: flex-start;
   }
-  
-  .navbar-nav .nav-item {
-    margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  .nav-text {
+    font-size: 30px;
   }
 
-  .navbar-nav .nav-link {
-    padding: 10px 15px;
-    font-size: 16px;
+  .nav-font {
+    font-size: large;
   }
 
-  .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    border: 0;
-    box-shadow: none;
+  #products-link {
+    font-size: large;
   }
 
-  .dropdown-menu .dropdown-item {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    clear: both;
-    font-size: 16px;
+  .navbar-nav {
+    justify-content: center; /* Center align navbar items */
   }
 
-  .dropdown-menu .dropdown-item:hover {
-    background-color: #f8f9fa;
+  .navbar-collapse {
+    justify-content: center; /* Center align navbar toggler */
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center; /* Center align navbar items */
+    align-items: center; /* Align items vertically */
+  }
+
+  .navbar-collapse {
+    justify-content: center; /* Center align navbar toggler */
+  }
+
+  .navbar-toggler {
+    margin-top: -10px; /* Adjust this value to align the navbar-toggler with the rest of the navbar */
   }
 }
