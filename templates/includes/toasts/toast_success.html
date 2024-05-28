@@ -1,32 +1,47 @@
 <div class="toast custom-toast custom-toast-container rounded-0 border-top-0" data-autohide="false">
+    <!-- Toast Arrow -->
     <div class="arrow-up arrow-success"></div>
+    <!-- Toast Top Cap -->
     <div class="w-100 toast-capper bg-success"></div>
+    <!-- Toast Header -->
     <div class="toast-header bg-white text-dark">
+        <!-- Toast Title -->
         <strong class="mr-auto">Success!</strong>
+        <!-- Close Button -->
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <!-- Toast Body -->
     <div class="toast-body bg-white">
+        <!-- Content of the toast -->
         <div class="row">
             <div class="col">
-                {{ message }}
+                {{ message }} <!-- Display message -->
                 <hr class="mt-1 mb-3">
             </div>
         </div>
+        <!-- Bag Notification Section -->
         {% if grand_total and not on_profile_page %}
+            <!-- Bag Notification Title -->
             <p class="logo-font bg-white text-black py-1">Your Bag</p>
+            <!-- Bag Items Notification Wrapper -->
             <div class="bag-notification-wrapper">
+                <!-- Iterating through each bag item -->
                 {% for item in bag_items %}
                     <div class="row">
+                        <!-- Bag Item Image Column -->
                         <div class="col-3 my-1">
+                            <!-- Displaying product image -->
                             {% if item.product.image %}
                             <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             {% else %}
                             <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                             {% endif %}
                         </div>
+                        <!-- Bag Item Details Column -->
                         <div class="col-9">
+                            <!-- Displaying product details -->
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small">Size: {{ item.size }}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
@@ -35,12 +50,13 @@
                     </div>
                 {% endfor %}
             </div>
+            <!-- Button to Go to Secure Checkout -->
             <div class="row">
                 <div class="col">
                     <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">
-                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-lock"></i> <!-- Lock icon -->
                         </span>
                     </a>
                 </div>

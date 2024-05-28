@@ -1,26 +1,32 @@
 <div class="collapse navbar-collapse" id="main-nav">
+    <!-- Main Navigation Links -->
     <ul class="navbar-nav w-auto mx-auto" id="main-nav-text">
+        <!-- Home Link -->
         <li class="nav-item dropdown">
-            <a class="nav-font font-weight-bold nav-link text-black mr-5" href="{%url 'home' %}" id="products-link" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="products-link" aria-haspopup="true" aria-expanded="false">
                 Home
             </a>
         </li>
+        <!-- All Products Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-font font-weight-bold nav-link text-black mr-5" href="#" id="products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{%url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{%url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{%url 'products' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
+                <!-- Links for Sorting Products -->
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
+                <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item">By Name</a>
             </div>
         </li>
 
+        <!-- Air Max Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-font font-weight-bold nav-link text-black mr-5" href="#" id="products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Air Max
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="air-max">
+                <!-- Different Air Max Categories -->
                 <a href="{% url 'products' %}?category=am1" class="dropdown-item">Air Max 1</a>
                 <a href="{% url 'products' %}?category=am90" class="dropdown-item">Air Max 90</a>
                 <a href="{% url 'products' %}?category=am95" class="dropdown-item">Air Max 95</a>
@@ -28,11 +34,13 @@
             </div>
         </li>
 
+        <!-- Nike Air Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-font font-weight-bold nav-link text-black mr-5" href="#" id="products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Nike Air
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
+                <!-- Different Nike Air Categories -->
                 <a href="{% url 'products' %}?category=jordan" class="dropdown-item">Air Jordan</a>
                 <a href="{% url 'products' %}?category=af1" class="dropdown-item">Air Force</a>
                 <a href="{% url 'products' %}?category=huarache" class="dropdown-item">Air Huarache</a>

@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Block for additional CSS specific to the profile page -->
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
+<!-- Block for the page header section -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -13,9 +15,12 @@
     </div>
 {% endblock %}
 
+<!-- Main content block for the profile page -->
 {% block content %}
+    <!-- Overlay div for visual effect -->
     <div class="overlay"></div>
     <div class="container">
+        <!-- Profile Page Title -->
         <div class="row">
             <div class="col">
                 <hr>
@@ -23,15 +28,20 @@
                 <hr>
             </div>
         </div>
+        <!-- Profile Form and Order History Section -->
         <div class="row">
+            <!-- Column for default delivery information form -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    <!-- CSRF token for security -->
                     {% csrf_token %}
+                    <!-- Form fields rendered using crispy forms -->
                     {{ form|crispy }}
                     <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
+            <!-- Column for order history -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
                 <div class="order-history table-responsive">
@@ -45,9 +55,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Loop through the orders and display each one -->
                             {% for order in orders %}
                                 <tr>
                                     <td>
+                                        <!-- Link to order history details -->
                                         <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
@@ -56,6 +68,7 @@
                                     <td>{{ order.date }}</td>
                                     <td>
                                         <ul class="list-unstyled">
+                                            <!-- Loop through line items of the order -->
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
                                                     {% if item.product.has_sizes %}
@@ -75,7 +88,9 @@
         </div>
 {% endblock %}
 
+<!-- Block for additional JavaScript to load after the page -->
 {% block postloadjs %}
     {{ block.super }}
+    <!-- Script for handling country field related functionality -->
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
