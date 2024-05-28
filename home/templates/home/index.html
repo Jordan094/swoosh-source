@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- Title Section -->
 <hr class="thick-black">
     <div class="index-header-container">
         <h1 class="display-4 logo-font text-center font-weight-bold" id="header-text">
@@ -26,7 +27,7 @@
         {% for product in random_products %}
         <div class="col-lg-4 col-md-12 col-sm-12"> 
             <div class="card text-center">
-                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }} - Product Image">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Price: £{{ product.price }}</p>
