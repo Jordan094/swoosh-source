@@ -1,1 +1,1 @@
-web: gunicorn swoosh-source.wsgi:application
+web: gunicorn smoosh_source.wsgi:application
