@@ -31,6 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['https://swoosh-source.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['8000-jordan094-swooshsource-bx4437k0948.ws-eu114.gitpod.io', 'localhost']
 
 
 # Application definition
@@ -120,7 +121,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
- 
+
 WSGI_APPLICATION = 'swoosh_source.wsgi.application'
 
 
