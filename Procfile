@@ -1,0 +1,1 @@
+web: gunicorn swoosh_source.wsgi:application
