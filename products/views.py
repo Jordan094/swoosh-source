@@ -4,10 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from bag.views import remove_from_bag
 from .models import Product, Category
-
 from .forms import ProductForm
 
 def all_products(request):
+    # Fetch all products initially
     products = Product.objects.all()
     query = None
     categories = None
@@ -16,11 +16,12 @@ def all_products(request):
     direction = None
 
     if request.GET:
+        # Handle sorting
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
-                sortkey = 'name'  
+                sortkey = 'name'
             if sortkey == 'category':
                 sortkey = 'category__name'
             if 'direction' in request.GET:
@@ -29,22 +30,25 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
+        # Handle filtering by category
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
+        # Handle filtering by type
         if 'type' in request.GET:
             types = request.GET.getlist('type')  # Get a list of all selected types
-            # Filter products based on selected types
             products = products.filter(category__type__in=types).distinct()
 
+        # Handle search queries
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "Uh oh! It seems like you forgot to type something in the search bar.")
                 return redirect('products')
 
+            # Search in product name and description
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -60,16 +64,12 @@ def all_products(request):
     
     return render(request, 'products/products.html', context)
 
-
-
-
 def product_detail(request, product_id):
-    """A view that will show the user all the details of a product once pressed. """
-
-    products = get_object_or_404(Product, pk=product_id)
+    """ Show all the details of a product """
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'product': products,
+        'product': product,
     }
     
     return render(request, 'products/product_detail.html', context)

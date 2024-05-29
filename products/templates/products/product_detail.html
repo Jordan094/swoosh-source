@@ -5,33 +5,39 @@
 {% endblock %}
 
 {% block content %}
-
+<!-- Main container for the product details page -->
 <div class="container centered-container">
     <div class="row w-100">
         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
             <div class="product-details-container mt-5">
                 <div class="product-details-content">
+                    <!-- Container for the product image -->
                     <div class="product-image-container">
                         <div class="image-container my-3">
                             {% if product.image %}
+                                <!-- Link to view the image in full size -->
                                 <a href="{{ product.image.url }}" target="_blank">
                                     <img class="product-image img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                             {% else %}
+                                <!-- Default image if no product image is available -->
                                 <img class="product-image img-fluid" src="{% static 'noimage.png' %}" alt="{{ product.name }}">
                             {% endif %}
                         </div>
                     </div>
+                    <!-- Container for the product information -->
                     <div class="product-info-container">
                         <h1 class="product-title">{{ product.name }}</h1>
                         <p class="lead mb-4 font-weight-bold">£{{ product.price }}</p>
                         <p class="product-description">{{ product.description }}</p>
                     </div>
                 </div>
+                <!-- Container for the form to add the product to the shopping bag -->
                 <div class="product-form-container">
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
+                            <!-- Dropdown for selecting product size -->
                             <div class="col-12">
                                 <p class="mt-3"><strong>Size:</strong></p>
                                 <div class="form-group">
@@ -48,6 +54,7 @@
                                     </select>
                                 </div>
                             </div>
+                            <!-- Input for selecting product quantity -->
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50 mx-auto">
@@ -75,6 +82,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Buttons for navigation and adding product to the bag -->
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
                                     <span class="icon">
@@ -84,6 +92,7 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
+                            <!-- Hidden field to keep track of the redirect URL -->
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
@@ -96,5 +105,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<!-- Include the script for handling quantity input -->
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

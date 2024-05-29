@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block page_header %}
+    <!-- Container for the header, providing structure -->
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -10,22 +11,31 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Overlay to add visual effect to the page -->
     <div class="overlay"></div>
+    <!-- Main container for the content -->
     <div class="container">
+        <!-- Row for centering the content -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <hr>
+                <!-- Heading for the page -->
                 <h2 class="logo-font mb-4 text-center product-font">Product Management</h2>
+                <!-- Subheading indicating the purpose of the page -->
                 <h5 class="text-muted text-center ">Add a Product</h5>
                 <hr>
             </div>
         </div>
 
+        <!-- Row for centering the form -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
+                <!-- Form for adding a product, using POST method and multipart form data for image upload -->
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <!-- Display the form fields using crispy forms for styling -->
                     {{ form | crispy }}
+                    <!-- Buttons for form submission and cancellation -->
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Add Product</button>

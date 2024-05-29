@@ -31,7 +31,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
     
     # Get all orders related to the user's profile
-    orders = profile.orders.all()
+    orders = profile.Orders.all()
 
     # Specify the template to render
     template = 'profiles/profile.html'

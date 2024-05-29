@@ -11,20 +11,20 @@
             <div class="col text-center mt-3">
                 <h2 class="product-font">
                     {% if request.GET.sort == "price" %}
-                    Sorted by Price
-                {% elif request.GET.sort == "category" %}
-                    {% if request.GET.category %}
-                        Sorted by {{ request.GET.category }} Category
+                        Sorted by Price
+                    {% elif request.GET.sort == "category" %}
+                        {% if request.GET.category %}
+                            Sorted by {{ request.GET.category }} Category
+                        {% else %}
+                            Sorted by Category
+                        {% endif %}
+                    {% elif request.GET.sort == "name" %}
+                        Sorted by Name
                     {% else %}
-                        Sorted by Category
+                        {% if products|length > 0 and products.0.category.friendly_name %}
+                            The {{ products.0.category.friendly_name }} Collection
+                        {% endif %}
                     {% endif %}
-                {% elif request.GET.sort == "name" %}
-                    Sorted by Name
-                {% else %}
-                    {% if products|length > 0 and products.0.category.friendly_name %}
-                        The {{ products.0.category.friendly_name }} Collection
-                    {% endif %}
-                {% endif %}
                 </h2>
                 <hr class="w-50 mb-1">
             </div>
@@ -32,6 +32,7 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
+                    <!-- Sorting selector on the right side -->
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -44,25 +45,27 @@
                                 <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
                             </select>
                         </div> 
+                    </div>
+                    <!-- Display number of products and search term on the left side -->
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-muted mt-3 text-center text-md-left">
-                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                    </p>
-                </div>
-            </div>
+                <!-- Display each product -->
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
                                 {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
+                                    <a href="">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
@@ -75,46 +78,50 @@
                                                 <small class="text-muted">{{ product.category.friendly_name }}</small>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
-                                            <small class="ml-3">
-                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                            </small>
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                </small>
                                             {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Clearfix for every third product in the row -->
                         {% if forloop.counter|divisibleby:3 %}
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    <!-- Back to top button -->
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a class="btt-link d-flex h-100">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
+        </a>    
     </div>
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
+        // Scroll to top on clicking the back to top button
+        $('.btt-link').click(function(e) {
+            window.scrollTo(0, 0);
+        })
+    </script>
     
     <script type="text/javascript">
+        // Handle sorting selector change
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
 
             var selectedVal = selector.val();
-            if(selectedVal != "reset"){
+            if (selectedVal != "reset") {
                 var sort = selectedVal.split("_")[0];
                 var direction = selectedVal.split("_")[1];
 
@@ -130,5 +137,4 @@
             }
         })
     </script>
-    
 {% endblock %}

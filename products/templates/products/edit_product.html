@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block page_header %}
+    <!-- Header container to provide structure to the page header -->
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -10,8 +11,11 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Overlay to add visual effect to the page -->
     <div class="overlay"></div>
+    <!-- Main container for the page content -->
     <div class="container">
+        <!-- Row for the page heading and description -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <hr>
@@ -21,17 +25,23 @@
             </div>
         </div>
 
-        <div class="row justify-content-center"> <!-- Center the form -->
+        <!-- Row for centering the form on the page -->
+        <div class="row justify-content-center">
             <div class="col-12 col-md-6">
+                <!-- Form to edit the product, using POST method and multipart form data for image upload -->
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <!-- Loop through the form fields to display them -->
                     {% for field in form %}
+                        <!-- Display all fields except the image field using crispy forms for styling -->
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
+                        <!-- Display the image field separately -->
                         {% else %}
                             {{ field }}
                         {% endif %}
                     {% endfor %}
+                    <!-- Buttons for form submission and cancellation -->
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Update Product</button>
@@ -44,6 +54,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    <!-- JavaScript to update the filename display when a new image is selected -->
     <script type="text/javascript">
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];

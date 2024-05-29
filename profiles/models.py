@@ -11,6 +11,7 @@ class UserProfile(models.Model):
     A user profile model for maintaining default
     delivery information and order history
     """
+    # Link this profile to a user
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
@@ -21,6 +22,7 @@ class UserProfile(models.Model):
     default_country = CountryField(blank_label='Country', null=True, blank=True)
 
     def __str__(self):
+        # Return the user's username when we print the profile
         return self.user.username
 
 
@@ -30,6 +32,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     Create or update the user profile
     """
     if created:
+        # If a new user is created, make a new profile for them
         UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
+    # For existing users, just save the profile
     instance.userprofile.save()
