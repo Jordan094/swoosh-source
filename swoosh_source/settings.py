@@ -124,7 +124,7 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 
-WSGI_APPLICATION = 'swoosh-source.wsgi.application'
+WSGI_APPLICATION = 'swoosh_source.wsgi.application'
 
 
 # Database
