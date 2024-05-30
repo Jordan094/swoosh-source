@@ -31,6 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['swoosh-source-caf22a2ccbfa.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-jordan094-swooshsource-bx4437k0948.ws-eu114.gitpod.io', 'localhost']
 
 
 
@@ -128,6 +129,14 @@ WSGI_APPLICATION = 'swoosh_source.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
