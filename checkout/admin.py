@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, OrderFeedback
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -26,4 +26,16 @@ class OrderAdmin(admin.ModelAdmin):
 
     ordering = ('-date',)
 
+
+class OrderFeedbackAdmin(admin.ModelAdmin):
+    list_display = ('order', 'user_profile', 'feedback', 'user_username')  # Add 'user_username' to display
+
+    def user_username(self, obj):
+        return obj.user_profile.user.username if obj.user_profile else None  # Access the username via UserProfile
+
+
+
+
+
 admin.site.register(Order, OrderAdmin)
+admin.site.register(OrderFeedback)

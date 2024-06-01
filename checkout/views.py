@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from django.contrib.auth.models import User
 from profiles.forms import UserProfileForm
-from profiles.models import UserProfile
+from .models import UserProfile
 from bag.contexts import bag_contents
+
+from .forms import OrderFeedbackForm
 
 import stripe
 import json
@@ -181,3 +185,22 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def thank_you_feedback(request):
+    return render(request, 'checkout/feedback_success.html')
+
+@login_required
+def order_feedback(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user_profile=request.user.userprofile)
+    if request.method == 'POST':
+        form = OrderFeedbackForm(request.POST)
+        if form.is_valid():
+            feedback = form.save(commit=False)
+            feedback.order = order
+            feedback.user_profile = request.user.userprofile
+            feedback.save()
+            return redirect('feedback_success')  # Redirect to thank you page
+    else:
+        form = OrderFeedbackForm()
+    return render(request, 'checkout/order_feedback.html', {'form': form, 'order': order})

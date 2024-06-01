@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12 col-lg-7 mx-auto">
+            <h2 class="logo-font mb-4 row justify-content-center product-font">Thank You for Leaving Feedback!</h2>
+            <p class="text-center">Your feedback is valuable to us. We appreciate you taking the time to share your thoughts.</p>
+            <a href="{% url 'home' %}" class="btn btn-black rounded-0 my-2 text-center">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

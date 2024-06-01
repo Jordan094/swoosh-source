@@ -52,6 +52,12 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    # Check if user is logged in to fetch favorites
+    if request.user.is_authenticated:
+        profile = request.user.userprofile
+        favorites = Favourites.objects.filter(user_profile=profile)
+        favorite_products_ids = [fav.favourite_item.id for fav in favorites]
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -60,6 +66,7 @@ def all_products(request):
         'current_categories': categories,
         'current_types': types,
         'current_sorting': current_sorting,
+        'favorite_products_ids': favorite_products_ids,
     }
     
     return render(request, 'products/products.html', context)

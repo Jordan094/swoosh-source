@@ -66,3 +66,15 @@ class OrderLineItem(models.Model):
     # String representation of the order line item
     def __str__(self):
         return f'Name {self.product.name} on order {self.order.order_number}'
+
+
+from django.db import models
+
+class OrderFeedback(models.Model):
+    order = models.OneToOneField('Order', on_delete=models.CASCADE, related_name='feedback')
+    rating = models.PositiveSmallIntegerField(default=0, choices=[(i, i) for i in range(1, 6)])
+    comments = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Feedback for Order {self.order.order_number}'

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <style>
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .star-rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center; /* Center align the star rating */
+            margin-bottom: 20px; /* Add some space below the star rating */
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 30px;
+            padding: 0;
+            cursor: pointer;
+            margin: 0 5px; /* Add margin to separate stars */
+        }
+        .star-rating label:before {
+            content: "\2605";
+        }
+        .star-rating input:checked ~ label:before {
+            color: orange;
+        }
+        .comments-box {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-7 mx-auto">
+            <h2 class="logo-font mb-4 row justify-content-center product-font">Feedback Form</h2>
+            <form method="post" class="feedback-form">
+                {% csrf_token %}
+                <div class="star-rating">
+                    <h3>Rate Your Experience</h3>
+                    {% for i in "12345" %}
+                        <input type="radio" id="rating{{ i }}" name="rating" value="{{ i }}" {% if i == form.rating.value %}checked{% endif %}>
+                        <label for="rating{{ i }}"></label>
+                    {% endfor %}
+                </div>
+                <div class="comments-box">
+                    <h3>Comments</h3>
+                    {{ form.comments }}
+                </div>
+                <button type="submit" class="btn btn-black rounded-0 my-2">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Script to handle star rating selection
+    const ratingInputs = document.querySelectorAll('.star-rating input');
+
+    ratingInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            // Uncheck all inputs
+            ratingInputs.forEach(input => input.checked = false);
+            // Check only this input
+            this.checked = true;
+        });
+    });
+</script>
+{% endblock %}

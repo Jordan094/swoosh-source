@@ -1,5 +1,5 @@
 from django import forms  # Importing forms module
-from .models import Order  # Importing Order model
+from .models import Order, OrderFeedback  # Importing Order model
 
 class OrderForm(forms.ModelForm):
     # Meta class defining the form's model and fields
@@ -38,3 +38,13 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'  # Add CSS class
             self.fields[field].label = False  # Remove field labels
 
+
+
+class OrderFeedbackForm(forms.ModelForm):
+    class Meta:
+        model = OrderFeedback
+        fields = ['rating', 'comments']
+        widgets = {
+            'rating': forms.RadioSelect(choices=[(i, i) for i in range(1, 6)]),
+            'comments': forms.Textarea(attrs={'rows': 4}),
+        }
