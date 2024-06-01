@@ -399,11 +399,17 @@ hr.thick-black {
   }
   .navbar-toggler-icon {
     display: flex;
-    width: 0.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
-}
+  }
+  .list-inline-item:not(:last-child) {
+    margin-right: 0rem;
+  }
+  .navbar-toggler {
+    padding: 0;
+  }
 }
