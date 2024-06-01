@@ -31,6 +31,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['swoosh-source-caf22a2ccbfa.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-jordan094-swooshsource-bx4437k0948.ws-eu114.gitpod.io', 'localhost']
+
 
 
 

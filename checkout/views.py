@@ -187,8 +187,7 @@ def checkout_success(request, order_number):
     return render(request, template, context)
 
 
-def thank_you_feedback(request):
-    return render(request, 'checkout/feedback_success.html')
+from django.shortcuts import redirect
 
 @login_required
 def order_feedback(request, order_id):
@@ -200,7 +199,10 @@ def order_feedback(request, order_id):
             feedback.order = order
             feedback.user_profile = request.user.userprofile
             feedback.save()
-            return redirect('feedback_success')  # Redirect to thank you page
+            return redirect('feedback_success')  # Corrected redirect to the view name
     else:
         form = OrderFeedbackForm()
     return render(request, 'checkout/order_feedback.html', {'form': form, 'order': order})
+
+def feedback_success(request):
+    return render(request, 'checkout/feedback_success.html')
