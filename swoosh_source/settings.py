@@ -126,8 +126,7 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'swoosh_source.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+    
 
 
 if 'USE_AWS' in os.environ:
