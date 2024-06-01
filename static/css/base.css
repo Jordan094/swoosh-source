@@ -251,6 +251,10 @@ hr.thick-black {
   border-radius: 0;
 }
 
+.centered-container {
+  padding-bottom: 5%;
+}
+
 /* Product Details Styles */
 .product-details-container {
   max-width: 900px;
@@ -375,4 +379,30 @@ hr.thick-black {
   .product-details-container {
     padding-bottom: 5%;
   }
+}
+
+@media (max-width: 576px) {
+  #header-text
+   {
+      font-size: 2rem;
+  }
+  #sub-header-text {
+    font-size: 22px;
+  }
+  .shop-now-button {
+    font-size: 14px;
+    padding: 2px 4px;
+    min-width: 100px;
+  }
+  #shop-now-text {
+    font-size: medium;
+  }
+  .navbar-toggler-icon {
+    display: flex;
+    width: 0.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }

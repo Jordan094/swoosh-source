@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from bag.views import remove_from_bag
-from .models import Product, Category
+from .models import Product, Category, UserProfile, Favourites
 from .forms import ProductForm
 
 def all_products(request):
@@ -141,3 +141,52 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_to_favourites(request):
+    if request.method == 'POST':
+        try:
+            product_id = request.POST.get('product_id')
+            product = get_object_or_404(Product, pk=product_id)
+            profile = request.user.userprofile
+
+            if Favourites.objects.filter(user_profile=profile, favourite_item=product).exists():
+                messages.error(request, 'Product is already in favorites.')
+            else:
+                Favourites.objects.create(
+                    favourite_item=product,
+                    user_profile=profile,
+                )
+                messages.info(request, 'Product added to favorites!')
+        except Product.DoesNotExist:
+            messages.error(request, 'Product does not exist.')
+        except Exception as e:
+            messages.error(request, str(e))
+
+        redirect_url = request.POST.get('redirect_url', reverse('products'))
+        return redirect(redirect_url)
+    else:
+        return redirect('products')
+
+@login_required
+def remove_from_favourites(request):
+    if request.method == 'POST':
+        try:
+            product_id = request.POST.get('product_id')
+            redirect_url = request.POST.get('redirect_url', reverse('products'))
+            product = get_object_or_404(Product, id=product_id)
+            profile = request.user.userprofile
+
+            favourite = Favourites.objects.filter(user_profile=profile, favourite_item=product)
+            if favourite.exists():
+                favourite.delete()
+                messages.info(request, 'Product removed from favorites!')
+            else:
+                messages.error(request, 'Product is not in favorites.')
+        except Exception as e:
+            messages.error(request, str(e))
+
+        return redirect(redirect_url)
+    else:
+        return redirect('products')

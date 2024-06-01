@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import UserProfile
 
 
 class Category(models.Model):
@@ -31,3 +32,12 @@ class Product(models.Model):
     def __str__(self):
         # Return the product name when the object is printed
         return self.name
+
+
+class Favourites(models.Model):
+    favourite_item = models.ForeignKey(
+        Product, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='products')
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='products')

@@ -7,7 +7,7 @@
 {% block content %}
 <!-- Main container for the product details page -->
 <div class="container centered-container">
-    <div class="row w-100">
+    <div class="row">
         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
             <div class="product-details-container mt-5">
                 <div class="product-details-content">
@@ -92,11 +92,32 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
-                            <!-- Hidden field to keep track of the redirect URL -->
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
+                        <div class="product-favourites-container mt-3">
+                            {% if user.is_authenticated %}
+                                {% with user_profile=user.userprofile %}
+                                    <div class="btn-group" role="group">
+                                        <form method="post" action="{% url 'add_to_favourites' %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            <button type="submit" class="btn btn-black rounded-0 text-uppercase">Add to Favourites</button>
+                                        </form>
+                                        <form method="post" action="{% url 'remove_from_favourites' %}" class="mr-2">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            <button type="submit" class="btn btn-black rounded-0 text-uppercase">Remove from Favourites</button>
+                                        </form>
+                                    </div>
+                                {% endwith %}
+                            {% endif %}
+                        </div>
+                        <!-- Hidden field to keep track of the redirect URL -->
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
+                <!-- Container for the form to add/remove the product to/from favourites -->
             </div>
         </div>
     </div>
