@@ -414,19 +414,41 @@ hr.thick-black {
     padding: 0;
   }
   .nav-link {
-    padding: 5px 10px; /* Reduce padding for smaller buttons */
-    font-size: 14px; /* Reduce font size */
+    padding: 5px 10px; 
+    font-size: 14px; 
   }
   .nav-link i {
-    font-size: 1rem; /* Adjust icon size */
+    font-size: 1rem;
   }
   .nav-link p {
-    font-size: 12px; /* Adjust text size */
+    font-size: 12px;
   }
   .list-inline-item {
-    margin-right: 0.5rem; /* Adjust margin between buttons */
+    margin-right: 0.5rem; 
   }
   .dropdown-menu {
-    font-size: 14px; /* Reduce dropdown font size */
+    font-size: 14px; 
+  }
+}
+
+/* Smaller navbar for devices with width up to 420px */
+@media (max-width: 420px) {
+  .navbar {
+      padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+      font-size: 1.2rem; /* Adjust the brand font size */
+      padding: 0.25rem 0;
+  }
+
+  .navbar-nav .nav-link {
+      font-size: 0.9rem; /* Adjust the nav links font size */
+      padding: 0.25rem 0.5rem;
+  }
+
+  .navbar-toggler {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
   }
 }
