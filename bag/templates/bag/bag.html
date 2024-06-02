@@ -24,7 +24,7 @@
                 <!-- Table for displaying bag items -->
                 <div class="table-responsive rounded">
                     <table class="table table-sm table-borderless">
-                        <thead class="text-black">
+                        <thead class="text-black d-none d-md-table-header-group">
                             <tr>
                                 <th scope="col">Product Info</th>
                                 <th scope="col"></th>
@@ -36,25 +36,25 @@
 
                         <!-- Loop through bag items -->
                         {% for item in bag_items %}
-                            <tr>
-                                <td class="p-3 w-25">
+                            <tr class="d-flex flex-column flex-md-row">
+                                <td class="p-3 w-100 w-md-25 product-image-container">
                                     <!-- Product image -->
                                     {% if item.product.image %}
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    <img class="img-fluid rounded product-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                     {% else %}
-                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    <img class="img-fluid rounded product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                     {% endif %}
                                 </td>
-                                <td class="py-3">
+                                <td class="py-3 w-100 w-md-25">
                                     <!-- Product name and size -->
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-0">Size UK{{ item.size }}</p>
                                 </td>
-                                <td class="py-3">
+                                <td class="py-3 w-100 w-md-15">
                                     <!-- Product price -->
                                     <p class="my-0">£{{ item.price }}</p>
                                 </td>
-                                <td class="py-3 w-25">
+                                <td class="py-3 w-100 w-md-25">
                                     <!-- Form for updating quantity -->
                                     <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                         {% csrf_token %}
@@ -90,7 +90,7 @@
                                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                                 </td>
                                 <!-- Subtotal for the item -->
-                                <td class="py-3">
+                                <td class="py-3 w-100 w-md-10">
                                     <p class="my-0">£{{ item.item_total }}</p>
                                 </td>
                             </tr>
@@ -157,7 +157,7 @@
         $('.remove-item').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
             var itemId = $(this).attr('id').split('remove_')[1];
-            var size = $(this).data('size');
+            var size = $(this).data('product_size');
             var url = `/bag/remove/${itemId}/`;
             var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
 

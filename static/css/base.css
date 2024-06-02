@@ -379,6 +379,7 @@ hr.thick-black {
   .product-details-container {
     padding-bottom: 5%;
   }
+  
 }
 
 @media (max-width: 576px) {
@@ -411,5 +412,21 @@ hr.thick-black {
   }
   .navbar-toggler {
     padding: 0;
+  }
+  .nav-link {
+    padding: 5px 10px; /* Reduce padding for smaller buttons */
+    font-size: 14px; /* Reduce font size */
+  }
+  .nav-link i {
+    font-size: 1rem; /* Adjust icon size */
+  }
+  .nav-link p {
+    font-size: 12px; /* Adjust text size */
+  }
+  .list-inline-item {
+    margin-right: 0.5rem; /* Adjust margin between buttons */
+  }
+  .dropdown-menu {
+    font-size: 14px; /* Reduce dropdown font size */
   }
 }
