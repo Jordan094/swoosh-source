@@ -1,110 +1,257 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## **Swoosh Source - Trainer Selling Website**
 
-Welcome USER_NAME,
+### Milestone Project 4 - Full Stack Frameworks with Django
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+* Swoosh Source is a online platform to sell popular Nike Trainers to members. 
+* This website has been designed using Django full-stack framework and uses a Relational Database. Technologies used include HTML, CSS, Javascript, Python, Google Maps API and Stripe payments and is my submission for Milestone Project 4
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Live Project
 
-## Gitpod Reminders
+[View the live project here](https://swoosh-source-caf22a2ccbfa.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+# **User Experience**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Background
 
-A blue button should appear to click: _Make Public_,
+* Swoosh Source is an innovative online store project dedicated to providing a seamless and enjoyable shopping experience for trainers enthusiasts. Swoosh Source aims to offer a comprehensive platform where users can easily browse, search, and purchase their favorite trainers. Users can also leave feedback on their purchase.
 
-Another blue button should appear to click: _Open Browser_.
+## User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User stories
 
-To log into the Heroku toolbelt CLI:
+| User Story ID | As a/an | I want to be able to... | So that I can... |
+| --- | ----------- | ----------- | ----------- |
+ | Viewing and Navigation | 
+ | 1 | Customer | View a list of products | Add them to my bag to purchase  | 
+ | 2 | Customer | View individual products details | Find out the price of the item, details of the product | 
+ | 3 | Customer | Be able to add and remove products from my favourites | View them at a later date |
+ | 4 | Customer | Be able to view my the total cost of my items at any time | Know my spending at all times | 
+ | Registration and User Accounts | 
+ | 5 | Site User | Easily register for an account | Have a personal account and be able to see my profile | 
+ | 6 | Site User | Easily login or logout | Access my personal info | 
+ | 7 | Site User | Easily access my user profile | Access my account quickly | 
+ | 8 | Site User | Have a personalised user profile | With my personal order history and be able to update my default billing address | 
+ | 9 | Site User | Be able to make an account after checkout | To be able to see my order if I haven't made one before | 
+ | 10 | Site User | Make an account to leave ratings and reviews | Give site owners feedback on my experiecne | 
+ | Sorting and Searching | 
+ | 11 | Customer | Sort/ Filter products by all, price and category.  | Easily identify products that I like and fit my price range | 
+ | 12 | Customer | Be able to edit my filters. | To make it quicker and easier to apply filters | 
+ | 13 | Customer | Search for a product by name, description or key feature | Find a specific product I am looking for | 
+ | 14 | Customer | Easily see what I've searched for and the number of results | Be able to see which options match my search | 
+ | 15 | Customer | See if there are no search results | Quickly see there is nothing that matches my search | 
+ | Purchasing and Checkout | 
+ | 16 | Customer | Select the size of the product I am purchasing | Make sure I dont purchase the wrong size | 
+ | 17 | Customer | View the items that I have added to my bag | View the total amount that I will be charged for my purchase | 
+ | 18 | Customer | Adjust the quantity of items in my bag | Make sure I dont order the wrong amount | 
+ | 19 | Customer | Easily enter my payment information | Quickly checkout | 
+ | 20 | Customer | Feel my personal and payment information is safe and secure | Confidentially provide my payment information and make a purchase | 
+ | 21 | Customer | View an order confirmation after checkout | Review my order and make sure I have made no mistakes | 
+ | Landing Page | 
+ | 22 | Store Owner | Showcase random listings | Give website visitors a quick peak at random products available to possibly try something new | 
+ | Admin and Product Management | 
+ | 23 | Store Owner | Add a product | Add new products to my store | 
+ | 24 | Store Owner | Edit a product | Update or correct details shown to user about a product | 
+ | 25 | Store Owner | Add a product | Remove a product from my store | 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+## Features To Be Included
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 20 2023:** Update Python version to 3.9.17.
+# **Design**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Colour Pallete
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Swoosh Source Colour Palette]
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Pallette Created Using Coolors.co](https://coolors.co/)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Typography
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Images Used
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Icons
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+I have used fontawesome icons for the external link icons where are present in the footer.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+# **Structure**
 
-------
+# **Wireframes**
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+## Features
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+# **Functions Explained**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The following section will explain in detail how each function works.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Javascript Functions
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+# Data Model
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+# Deployment & Local Development
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Deployment
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Local Development
 
----
+### How to Fork
 
-Happy coding!
+
+### How to Clone
+
+### How to deploy
+
+#### Elephant SQL
+
+#### Heroku
+
+
+# **Accessibility**
+
+I wanted to ensure that the website was fully accessible. I have done this by doing the following:
+
+* Providing Alternative Text (Alt Text)
+  * I've made sure to add descriptive alternative text (alt text) to all images on the website. Alt text adds context to images, enabling users who rely on screen readers to understand the visual content even if they can't see it.
+* Ensuring Color Contrast
+  * I've chosen color combinations that maintain accessible contrast ratios, ensuring that text remains readable against different background colors. This benefits users with visual impairments or color blindness.
+* Responsive Design
+  * The site is designed to adapt to various devices and screen sizes. This caters to users who rely on different devices or have specific accessibility requirements.
+
+# Testing
+
+I performed manual testing all through the creation of my website. I would test to ensure full functionaility is present across all devices before committing any changes.
+
+Below is an overview of my testing and tests were carried out on the following devices:
+
+* Samsung Galaxy S22 Ultra
+* iPhone 14
+* Samsung Galaxy Tab
+* ASUS Chromebook with 15.3" Screen
+* Windows 11 desktop computer with a 27" Monitor
+
+## Site Wide Testing
+
+
+
+## Testing User Stories from User Experience (UX) Section
+
+### First Time User Goals
+
+
+### Frequent User Goals
+
+
+# User Feedback
+
+
+
+# **Future Developments**
+
+
+# **Technologies Used**
+* [Django](https://www.djangoproject.com/)
+  * This website is built using Django, a high-level Python web framework.
+* [HTML5](https://www.w3schools.com/html/html_intro.asp)
+  * HTML was used to create my website
+* [Python](https://www.python.org/)
+  * Used for my websites core functionality
+* [Heroku](https://id.heroku.com/login)
+  * Heroku is the deployment source I used for this project.
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+  * Templating Language
+* [MaterialiseCSS](https://materializecss.com/)
+  * UI component library that is created with HTML, CSS, and Javascript
+* [ElephantSQL](https://www.elephantsql.com/)
+  * ElephantSQL installs and manages PostgreSQL databases
+* [CSS3](https://www.w3schools.com/css/css_intro.asp)
+  * CSS was used to style my website
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+  * Javascript was used to add functionality to my website
+* [GitHub](https://github.com/)
+  * I used github to create my repository and store my projects code.
+* [Code Anywhere](https://app.codeanywhere.com/)
+  * I used Code Anywhere as my IDE
+* [Chrome](https://www.google.com/intl/en_uk/chrome/)
+  * I tested my website and responsiveness throught creation using chrome developer tools.
+* [Balsamiq](https://balsamiq.com/)
+  * Balsamiq was used to create the wireframes during the design process.
+* [Google Fonts](https://fonts.google.com/)
+  * I used the font Outfit which is a Google font, with a fallback font of Sans-Serif thoughout my whole project.
+* [Am I Responsive?](https://ui.dev/amiresponsive)
+  * This was used to test the responsiveness on all devices once the pages were complete.
+* [W3 Schools HTML Validation Service](https://validator.w3.org/)
+  * This was used to check for any HTML errors in the code.
+* [W3 Schools CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+  * This was used to check for any HTML errors in the code.
+
+## Validation and Tools
+
+### W3C Validation Tools
+
+Once my pages were complete I used [W3C Markup Validation Service](https://validator.w3.org/) to ensure my code had no errors.
+
+No errors are present throughout the whole site.
+
+I also used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to ensure my code has no CSS errors. This came back as a pass, However there are a number of errors with the fontawesome and materialise which are unavoidable.
+
+Lastly I used [JSHint](https://jshint.com/) to validate my JavaScript.
+
+There were no errors found. There was 1 warning to say I had an unused variable but this will be used in future interations of this site.
+
+### Responsiveness Testing
+
+I used [Am I Responsive?](https://ui.dev/amiresponsive) to ensure my page displayed correctly on all devices. The screenshots are above each pages section
+
+# Credits
+
+## Code
+
+* [Code Institute's Level 5 in Web Application Development course](https://codeinstitute.net/) for providing me lessons and source code which has helped to create my website.
+
+* [MaterializeCSS](https://materializecss.com/) for providing templates to build my site with ease.
+
+* [Heroku](https://id.heroku.com/login) Heroku is the deployment source I used for this project.
+  
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/) Templating Language.
+
+* [ElephantSQL](https://www.elephantsql.com/) for providing me with database hosting and management.
+
+* [W3Schools](https://www.w3schools.com/) for providing examples of code for further customisation of my site and quick help for HTML elements.
+
+* [Fontawesome](https://fontawesome.com/) for providing me with icons which I have used ony my footer.
+
+* [Mozilla MDN Javascript Developer Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript) for guidance with my Javascript Age Validation.
+
+## Imagery
+
+
+# Acknowledgements
+
+* Thank you to [Code Institute](https://codeinstitute.net/) staff for providing me lessons.
+  
+* Thank you to [City of Bristol College](https://www.cityofbristol.ac.uk/) for facilitating my learning.
+
+* Thank you to Pasquale Fasulo for my tutoring sessions and [Manuel Perez Romero](https://github.com/Manuperezro) for my one to one sessions.
+
+* Thank you to Thomas Farrell for providing invaluable in depth user testing feedback as a qualified software tester.
+
+* Thank you to [Daniel Matthews](https://github.com/Dan-Matthews-23) for support offered and also for testing.
+
+* Thank you to Levi Webb for providing android testing and laptop testing.
