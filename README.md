@@ -514,6 +514,17 @@ __Toast Error__
 
 # Data Model
 
+I have used dbdiagram.io to design these database models. I have used the following data models:
+  * User - Contains user sign in information, order history and default delivery details.
+  * Favourites - Contains trainers users have favourited.
+  * Order Feedback - Contains the rating and comments users have left on orders.
+  * Category - Contains category ID names and type.
+  * Products - Contains Product category, details, price and images.
+  * Basket - Contains products users have added to thier basket.
+  * Checkout order - Contains order details, user details, payment details.
+
+![Data Models](/media/dbmodel.png)
+
 
 # Deployment & Local Development
 
@@ -791,7 +802,122 @@ Below is an overview of my testing and tests were carried out on the following d
 
 ## Site Wide Testing
 
+### Accounts Testing
 
+#### Scenario - User Account
+
+Expectation: Users to be able to sign up for an account. Once logged into the account they should be able to complete the following:
+
+  * Edit their default delivery address so the information is pre-populated when placing an order.
+  * Add and remove items from their favourites.
+  * Leave feedback on thier orders.
+  * View their order history.
+
+Result: Passed all tests.
+
+#### Scenario - Admin Account
+
+Expectation: If a site administrator is logged in they should be able to complete the following:
+
+ * Add new trainers to the website.
+ * Edit information of trainers already on the website.
+ * Delete trainers from the website.
+
+Result: Passed all tests.
+
+
+### Navigation Testing
+
+Expectation: Navigation mar needs to be able to complete the following:
+
+  * Contain the website title that directs the users home
+  * Contain a responsive bag icon that shows a preview when pressed
+  * Contain a profile icon that gives further options when pressed
+  * Contain a search bar that allows users to search for a specific trainer
+  * Contain quick access links for searching for a specific trainer category, name or price
+  * Turn into a respond to the device being displayed on.
+
+Result: Passed all tests.
+
+
+### Trainer Cards
+
+Expectation: Trainer cards to be visible on the homepage showing the name, price and a button to view the full product.
+
+Result: Passed all tests.
+
+
+### User forms
+
+Expectation: A number of forms requiring the user to complete and progress further through the site. The forms are as follows:
+
+ * User Registration
+ * Sign In
+ * My Profile
+ * Checkout Details
+ * Feedback Form
+
+Result: Passed all tests.
+
+## Page Testing
+
+__Home Page (index.html)__
+
+Expectation: 
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Have a shop now button under the header text saying shop now, shop now button to take the user to the all products section of the website.
+ * 3 product cards to be shown to the user tempting them to try a new trainer that they may not have considered.
+ * Product cards to be shown in random order.
+
+Result: Passed all tests.
+
+__Signup Page (signup.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Users should be able to complete all forms to create thier own unique account.
+ * Once account has been created it should be added to the accounts database.
+ * If users already have an account they should be prompted to head to the log in page with a clickable link.
+
+Result: Passed all tests.
+
+__Signin Page (signin.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Users should be able to complete all forms to login to their own unique account.
+ * Once logged in the user should be redirected to the index landing page.
+ * If users have not signed up they should be prompted to create an account using clickable link.
+
+ Result: Passed all tests.
+
+__Profile Page (profile.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Page should be split into 2 sections, order history and default billing info.
+ * All previous orders should be shown to the user in the order history section.
+ * Clicking on that order should show them a confirmation of that previous order.
+ * Users should be shown a form containing either their blank shipping address if not completed or saved before, or if saved be shown the saved info.
+ * Users should be able to update this form and update thier default saved address.
+ * Once complete, when users head to the checkout page. Their default shipping info should be pre-populated.
+
+ Result: Passed all tests.
+
+__Products Page (products.html)__
+
+Expectation:
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Products to be displayed depending on how the links are accessed.
+ * Products that match search terms be shown if user submits a search
+ * When users click on their respective links (e.g. Air max 95 category) they should only be shown that category.
+ * Users should be able to sort products by the following: Name, Price, Category
+ * When a product is clicked on they should be taken to the full product details page for that specific product.
+
+ Result: Passed all tests.
 
 ## Testing User stories
 
@@ -830,6 +956,12 @@ Below is an overview of my testing and tests were carried out on the following d
 
 
 # **Future Developments**
+
+There are a number of features I would like to add in the future to my website, the features are as follows:
+
+  * Page for admins to view user feedback
+  * Page for users to view favourites
+  * Email authentication
 
 
 # **Technologies Used**
