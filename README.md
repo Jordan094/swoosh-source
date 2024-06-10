@@ -910,14 +910,130 @@ Expectation:
 __Products Page (products.html)__
 
 Expectation:
+
  * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
  * Products to be displayed depending on how the links are accessed.
  * Products that match search terms be shown if user submits a search
  * When users click on their respective links (e.g. Air max 95 category) they should only be shown that category.
  * Users should be able to sort products by the following: Name, Price, Category
  * When a product is clicked on they should be taken to the full product details page for that specific product.
+ * When admins are logged in they should see options to edit and delete products.
 
  Result: Passed all tests.
+
+
+__Product Details Page (products/details.html)__
+
+Expectation:
+
+* Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+* Users to be shown the full information of the product including: Name, Price, Category, Description and image.
+* Product size selector.
+* Product quantity selector.
+* Add to bag button present that when pressed adds the product to bag.
+* Toast to show product has been added to bag and a bag preview shown to user.
+* Button to add product from favourites.
+* Button to remove product from favourites.
+* Toast to show if favourites adjusted.
+
+Result: Passed all tests.
+
+
+__Bag Page (bag.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Show users all items in thier bag.
+ * Show users the Name, price, size and quantity selected of each item.
+ * Allow users to quickly adjust the quantity of the items.
+ * Show users a total.
+ * Show users their delivery fee.
+ * Show users their grand total.
+ * Show users a button to return to shopping if they have not finished or a checkout now button that should direct them to the checkout page.
+
+Result: Passed all tests.
+
+
+__Checkout Page (checkout.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Show the users a summary of their order with all items and a grand total.
+ * Provide a form for users to complete to purchase their items.
+ * Require users to provide a name and email address on every purchase.
+ * If users have saved billing info, pre populate this section of the form.
+ * Require user to input payment details into form that will be handled by the stripe payment system.
+ * Show a confirm order button once users order happy to continue which will attempt to purchase the item.
+ * If successful the user should be directed to the order confirmation page.
+
+Result: Passed all tests.
+
+
+__Order Confirmation Page (checkout/order.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Show the users a summary a confirmation of thier order.
+ * Give the user an order ID number incase they require it for support.
+ * Show the user their order info (order number, date of purchase)
+ * Show the user their order details (products, size, quantity)
+ * Show the user therr delivery details (Address)
+ * Show the user their Billing info (Total, delivery, grand total)
+ * Give the user an option to leave feedback which will direct the to the feedback page.
+ * Give the user the option to return home which will direct them to the landing page.
+
+Result: Passed all tests.
+
+__Feedback Page (feedback.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Allow the user to rate thier experience.
+ * Show 5 star icons to rate their order out of 5.
+ * Show a comments box for user to comment on their order.
+ * Button for users to leave feedback which will add feedback to database and redirect users to feedback thanks page.
+
+Result: Passed all tests.
+
+
+__Feedback Thanks Page (feedback_thanks.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Show a breif message thanking users for leaving feedback on thier order.
+ * Showing the user a button that will return them to the landing page.
+
+Result: Passed all tests.
+
+__ADMIN ONLY - Add products Page (products/add.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Only be accessible to site admins.
+ * Show the admin a blank form to complete to add a new prodcut to the website.
+ * Require the following categories to be completed (Name, Price, Category, Description, Image)
+ * Once complete and submitted product should be then displayed on the website.
+
+Result: Passed all tests.
+
+__ADMIN ONLY - Edit products Page (products/edit.html)__
+
+Expectation:
+
+ * Responsive to the device in which it is being displayed on, contain the navbar at the top with responsive icons.
+ * Only be accessible to site admins.
+ * Show the admin a pre-filled out form of the product they have chosen to edit.
+ * Require the following categories to be completed (Name, Price, Category, Description, Image)
+ * Once complete and submitted product should be then updated on the website.
+
+Result: Passed all tests.
+
 
 ## Testing User stories
 
